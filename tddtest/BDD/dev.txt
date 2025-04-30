@@ -1,0 +1,30 @@
+Funcionalidade: Fluxo de criação de usuário na plataforma FTEAM
+
+  Contexto:
+    Dado que estou acessando o sistema da FTEAM pela página de cadastro
+
+  Cenário: Criar um novo usuário com sucesso
+    Quando eu visito a URL "http://fteam.com/cadastro/"
+    E preencho o campo "Nome completo" com um nome válido
+    E preencho o campo "E-mail" com um endereço de e-mail válido
+    E preencho o campo "Senha" com uma senha forte
+    E clico no botão "Cadastrar"
+    Então o sistema deve criar a conta do usuário com sucesso
+    E eu devo ser redirecionado para o dashboard da plataforma
+
+  Cenário: Tentar criar um usuário com campos obrigatórios vazios
+    Quando eu acesso a página de cadastro
+    E deixo os campos obrigatórios em branco
+    E clico no botão "Cadastrar"
+    Então o sistema deve exibir mensagens de erro de validação para os campos obrigatórios
+    E a conta não deve ser criada
+
+  Cenário: Exibir erro ao tentar cadastrar com e-mail já utilizado
+    Quando eu tento me cadastrar utilizando um e-mail já registrado
+    Então o sistema deve exibir uma mensagem de erro informando que o e-mail já está em uso
+    E impedir a criação do novo usuário
+
+  Cenário: Validar força da senha no momento do cadastro
+    Quando eu preencho o campo "Senha" com uma senha fraca
+    Então o sistema deve exibir um aviso indicando que a senha não atende aos critérios mínimos
+    E o botão "Cadastrar" deve permanecer desabilitado até que os requisitos sejam atendidos

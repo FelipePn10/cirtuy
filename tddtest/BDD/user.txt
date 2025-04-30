@@ -1,0 +1,27 @@
+Funcionalidade: Cadastro e autenticação de usuários na plataforma FTEAM
+
+  Contexto:
+    Dado que eu acessei a página de cadastro da plataforma FTEAM
+
+  Cenário: Realizar o cadastro na plataforma caso o usuário não possua conta
+    Quando eu preencho corretamente os campos de nome de usuário, e-mail e senha
+    E clico no botão de "Cadastrar"
+    Então o cadastro deve ser realizado com sucesso
+    E eu devo ser redirecionado automaticamente para a página de dashboard da aplicação
+
+  Cenário: Realizar o login automaticamente caso o usuário já possua conta
+    Quando eu insiro um e-mail e senha já cadastrados no formulário
+    E clico no botão de "Cadastrar"
+    Então o sistema deve reconhecer que a conta já existe
+    E eu devo ser autenticado automaticamente
+    E devo ser redirecionado para o dashboard da aplicação
+
+  Cenário: Exibir mensagem de erro ao tentar se cadastrar com e-mail já utilizado
+    Quando eu tento realizar o cadastro com um e-mail já registrado
+    Então uma mensagem de erro informando que o e-mail já está em uso deve ser exibida
+    E o cadastro não deve ser realizado
+
+  Cenário: Exibir feedback de validação para dados inválidos
+    Quando eu tento submeter o formulário com campos vazios ou em formato inválido
+    Então o sistema deve exibir mensagens de erro de validação apropriadas
+    E o botão de "Cadastrar" deve permanecer desabilitado até a correção dos dados

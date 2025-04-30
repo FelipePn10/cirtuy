@@ -1,1 +1,1 @@
-// Nesse projeto iremos criar uma tela simples onde terá um campo de email, senha e um botão de login de registro do uusário dependendo se os campos de email e senha estiverem validados.
+// Nesse projeto iremos criar uma tela simples onde terá um campo de email, senha e um botão de login de registro do uusário dependendo se os campos de email e senha estiverem validados. Fazendo testes TDD e BDD
